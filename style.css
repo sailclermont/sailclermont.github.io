@@ -187,34 +187,34 @@ footer {
     margin-top: 60px;
     backdrop-filter: blur(5px);
 }
-/* UPDATED CAPTAIN PHOTO LAYOUT */
+/* UPDATED CAPTAIN PHOTO LAYOUT - 20% BIGGER */
 .captain-photos {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Tightens the space between you and Madi */
+    gap: 20px; /* Slightly more gap for the bigger photos */
     margin-bottom: 25px;
     padding: 10px;
 }
 
 .captain-card {
     flex: 1;
-    max-width: 150px; /* Keeps the photos from getting too big */
+    max-width: 160px; 
     text-align: center;
 }
 
 .profile-photo {
-    width: 100px; /* Specific size to keep them side-by-side */
-    height: 100px;
-    object-fit: cover; /* This is the magic—it crops to a perfect square without squishing your faces */
-    border-radius: 50%; /* This turns the photos into professional circles */
-    border: 3px solid #3b532e; /* Landscape Green border */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 125px; /* Increased from 100px */
+    height: 125px; /* Increased from 100px */
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 3px solid #3b532e; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly deeper shadow for the larger size */
 }
 
 .captain-card p {
-    margin-top: 8px;
+    margin-top: 12px; /* More space above the names */
     font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Slightly larger text to match the photos */
     font-weight: 700;
     color: #3b532e;
 }
