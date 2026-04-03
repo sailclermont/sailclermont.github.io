@@ -1,40 +1,46 @@
 /* =========================================
-   CORE PAGE SETTINGS
+   CORE PAGE SETTINGS (FULL PHOTO BG)
    ========================================= */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #2c2c2c; /* Soft Black for readable text */
-    background-color: #f7f5f0; /* Warm, earthy off-white */
+    color: #1a1a1a;
+    
+    /* This applies the photo to the ENTIRE page */
+    background-image: url('homepagebackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the water still while you scroll */
+    background-color: #3b532e; /* Fallback color */
 }
 
 /* =========================================
    HEADER & NAVIGATION
    ========================================= */
 header {
-    background-color: #3b532e; /* Deep Landscape Green */
+    background-color: rgba(59, 83, 46, 0.9); /* Semi-transparent Landscape Green */
     color: #ffffff;
     padding: 1.5rem 0;
     text-align: center;
+    backdrop-filter: blur(5px);
 }
 
 header h1 {
     margin: 0 0 10px 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 1px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -42,15 +48,11 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-nav ul li a:hover {
-    color: #d1bfae; /* Soft tan highlight */
+    font-size: 0.8rem;
 }
 
 /* =========================================
-   MAIN CONTENT & SECTIONS
+   FLOATING GLASS PANELS (CONTENT SECTIONS)
    ========================================= */
 main {
     max-width: 900px;
@@ -58,96 +60,54 @@ main {
     padding: 20px;
 }
 
-/* Standard White Boxes for Content (Like Services) */
+/* This turns all sections into frosted glass panels */
 section {
-    background: #ffffff;
-    margin: 20px 0;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin: 40px 0;
+    padding: 40px 20px;
     text-align: center;
+    
+    /* Glassmorphism Effect */
+    background-color: rgba(247, 245, 240, 0.88); /* Clean off-white frosted look */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Special Hero Styling (Top Section) */
+#hero {
+    background-color: rgba(247, 245, 240, 0.92); /* Slightly more solid for top text */
 }
 
 h2 {
-    color: #3b532e; /* Deep Landscape Green */
-    border-bottom: 2px solid #8c5226; /* Tea Brown Accent */
+    color: #3b532e;
+    border-bottom: 3px solid #8c5226;
     display: inline-block;
     padding-bottom: 5px;
+    font-weight: 800;
 }
 
-/* =========================================
-   HERO SECTION (GLASSMORPHISM WITH PHOTO)
-   ========================================= */
-#hero {
-    /* Make sure this filename matches exactly what you just uploaded! */
-    background-image: url('homepagebackground.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-    background-color: transparent; 
-    box-shadow: none; 
-    padding: 100px 0; 
-    position: relative; 
-    z-index: 1; 
-}
-
-/* The Center Frosted Glass Panel */
-#hero::before {
-    content: "";
-    position: absolute;
-    top: 40px; 
-    bottom: 40px; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75%; 
-    max-width: 800px;
-    z-index: -1; 
-
-    /* Core Glassmorphism Effect */
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px); 
-    background-color: rgba(247, 245, 240, 0.55); 
-    
-    /* Refinement and Depth */
-    border-radius: 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.25); 
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); 
-}
-
-/* Text Overrides inside the Glass Panel */
-#hero h2 {
-    color: #3b532e; 
-    border-bottom: 2px solid #8c5226; 
-    position: relative;
-    z-index: 2;
-}
-
-#hero p {
-    color: #2c2c2c; 
-    font-size: 1.1rem;
-    position: relative;
-    z-index: 2;
-    padding: 0 20px; 
+h3 {
+    color: #3b532e;
+    margin-top: 25px;
 }
 
 /* =========================================
    BUTTONS
    ========================================= */
 button {
-    background-color: #8c5226; /* Rich Tea Brown */
+    background-color: #8c5226;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 15px 30px;
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 50px; /* Modern pill-shaped buttons */
     cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #6b3d1a; /* Darker Tea Brown on hover */
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* =========================================
@@ -155,8 +115,9 @@ button:hover {
    ========================================= */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #3b532e; /* Deep Landscape Green */
+    padding: 30px;
+    background-color: rgba(59, 83, 46, 0.9);
     color: white;
-    margin-top: 40px;
+    margin-top: 60px;
+    backdrop-filter: blur(5px);
 }
