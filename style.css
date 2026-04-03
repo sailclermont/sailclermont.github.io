@@ -5,7 +5,7 @@
    CORE PAGE SETTINGS
    ========================================= */
 body {
-    font-family: 'Montserrat', sans-serif; /* Clean modern body text */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
 }
 
 /* =========================================
-   HEADER & NAVIGATION
+   HEADER & NAVIGATION (FIXED)
    ========================================= */
 header {
     background-color: rgba(59, 83, 46, 0.95);
@@ -28,19 +28,68 @@ header {
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif; /* Elegant Nautical Heading */
+    font-family: 'Playfair Display', serif;
     margin: 0 0 10px 0;
-    font-size: 2.4rem; /* Slightly larger for impact */
+    font-size: 2.2rem;
     letter-spacing: 2px;
     font-weight: 900;
 }
 
-nav ul li a {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1.5px;
-    font-size: 0.75rem;
-    font-weight: 700;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+nav ul li {
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+
+nav ul li a:hover {
+    color: #d1bfae !important;
+}
+
+/* =========================================
+   TITLES & TEXT
+   ========================================= */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #3b532e;
+    border-bottom: 3px solid #8c5226;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #3b532e;
+}
+
+p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #2c2c2c;
+}
+
+/* Keep everything below this (MAIN, SECTION, BUTTONS) as it was */
+
 
 /* =========================================
    TITLES INSIDE THE GLASS PANELS
