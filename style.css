@@ -1,0 +1,96 @@
+/* Core Page Settings */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #2c2c2c; /* Soft Black for readable text */
+    background-color: #f7f5f0; /* Warm, earthy off-white */
+}
+
+/* Header & Navigation Styling */
+header {
+    background-color: #3b532e; /* Deep Landscape Green */
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+    color: #d1bfae; /* Soft tan highlight */
+}
+
+/* Main Content Sections */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+h2 {
+    color: #3b532e; /* Deep Landscape Green */
+    border-bottom: 2px solid #8c5226; /* Tea Brown Accent */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Button Styling for Bookings */
+button {
+    background-color: #8c5226; /* Rich Tea Brown */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6b3d1a; /* Darker Tea Brown on hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3b532e; /* Deep Landscape Green */
+    color: white;
+    margin-top: 40px;
+}
