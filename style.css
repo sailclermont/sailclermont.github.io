@@ -1,72 +1,73 @@
 /* Import Professional Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap');
 
 /* =========================================
-   CSS VARIABLES
+   VARIABLES & GLOBAL STYLES
    ========================================= */
 :root {
-    --primary-color: #3b532e;
-    --primary-hover: #2b3d22;
-    --accent-color: #8c5226;
-    --accent-hover: #6e3f1c;
-    --text-color: #2c3e50;
-    --text-light: #ffffff;
-    --bg-overlay: rgba(247, 245, 240, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.5);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --primary-color: #3b532e; /* Clermont Green */
+    --secondary-color: #8c5226; /* Clermont Tea Brown */
+    --text-color: #1f2937;
+    --light-text: #f3f4f6;
+    --background-overlay: rgba(247, 245, 240, 0.88);
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
     --transition-speed: 0.3s;
 }
 
-/* =========================================
-   CORE PAGE SETTINGS
-   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: var(--font-body);
-    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
     color: var(--text-color);
     background-image: url('homepagebackground.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* =========================================
-   HEADER & NAVIGATION (FIXED)
+   HEADER & NAVIGATION
    ========================================= */
 header {
-    background-color: rgba(33, 48, 26, 0.85);
-    color: var(--text-light);
-    padding: 1.5rem 0;
+    background: linear-gradient(135deg, rgba(59, 83, 46, 0.95), rgba(140, 82, 38, 0.85));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: var(--glass-border);
+    color: var(--light-text);
+    padding: 2rem 1rem;
     text-align: center;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header h1 {
-    font-family: var(--font-heading);
-    margin: 0 0 1rem 0;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
 }
 
 nav ul {
@@ -78,148 +79,129 @@ nav ul {
 }
 
 nav ul li a {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: var(--light-text);
     text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    display: inline-block;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
 }
 
 nav ul li a:hover {
-    color: #d1bfae !important;
+    background: var(--glass-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
 /* =========================================
-   TYPOGRAPHY
-   ========================================= */
-h2 {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.5rem;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-}
-
-h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-p {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-}
-
-/* =========================================
-   LAYOUT & GLASS PANELS
+   MAIN CONTENT & GRID LAYOUT
    ========================================= */
 main {
-    max-width: 1000px;
+    flex: 1;
+    max-width: 1200px;
     margin: 3rem auto;
     padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    #hero, #about, #the-captains, #the-vessel, #booking {
+        grid-column: 1 / -1; 
+    }
 }
 
 section {
-    margin: 4rem 0;
-    padding: 4rem 3rem;
+    background: var(--background-overlay);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform var(--transition-speed) ease;
     text-align: center;
-    background: var(--bg-overlay);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-radius: 24px;
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 section:hover {
     transform: translateY(-5px);
 }
 
-#hero {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 5rem 3rem;
+section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
-#hero h2 {
-    font-size: 2.8rem;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 2px;
 }
 
 /* =========================================
-   SERVICES GRID (For HTML update later)
+   GLASS CARDS (Sub-sections)
    ========================================= */
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.glass-card {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.glass-card p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     margin-top: 2rem;
-}
-
-.service-card {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 2.5rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.8);
-    transition: all var(--transition-speed) ease;
-}
-
-.service-card:hover {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    flex-wrap: wrap;
 }
 
 /* =========================================
    BUTTONS
    ========================================= */
 button {
-    background-color: var(--accent-color);
-    color: var(--text-light);
+    background: var(--secondary-color);
+    color: var(--light-text);
     border: none;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    font-family: var(--font-body);
     font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     border-radius: 50px;
     cursor: pointer;
-    margin-top: 1rem;
-    box-shadow: 0 4px 15px rgba(140, 82, 38, 0.3);
+    font-family: inherit;
     transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: var(--accent-hover);
+    background: var(--primary-color);
+    color: var(--light-text);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(140, 82, 38, 0.4);
 }
 
 /* =========================================
@@ -228,36 +210,31 @@ button:hover {
 .captain-photos {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 3rem;
-    margin: 3rem 0;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 10px;
 }
 
 .captain-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex: 1;
+    max-width: 160px; 
+    text-align: center;
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    width: 125px; 
+    height: 125px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 3px solid var(--primary-color); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
 }
 
 .captain-card p {
-    margin-top: 1.5rem;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
+    margin-top: 12px; 
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 700;
     color: var(--primary-color);
 }
 
@@ -291,68 +268,8 @@ button:hover {
 }
 
 /* =========================================
-   FOOTER
-   ========================================= */
-footer {
-    text-align: center;
-    padding: 2.5rem;
-    background-color: rgba(33, 48, 26, 0.95);
-    color: var(--text-light);
-    margin-top: 5rem;
-    backdrop-filter: blur(10px);
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    color: var(--text-light);
-}
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-@media (min-width: 900px) {
-    .vessel-content {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    
-    .vessel-image {
-        flex: 1;
-        max-width: 50%;
-    }
-    
-    .vessel-text {
-        flex: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    section {
-        padding: 3rem 1.5rem;
-    }
-    
-    #hero h2 {
-        font-size: 2.2rem;
-    }
-    
-    .captain-photos {
-        gap: 1.5rem;
-    }
-}
-
-/* =========================================
    BOOKING SECTION
    ========================================= */
-#booking {
-    text-align: center;
-}
-
 .booking-container {
     max-width: 800px;
     margin: 0 auto;
@@ -402,7 +319,7 @@ footer p {
     outline: none;
     border-color: var(--primary-color);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    box-shadow: 0 0 0 3px rgba(59, 83, 46, 0.2);
 }
 
 .submit-btn {
@@ -410,6 +327,41 @@ footer p {
     margin-top: 1rem;
     font-size: 1.1rem;
     padding: 1rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background: rgba(59, 83, 46, 0.95);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+footer p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (min-width: 900px) {
+    .vessel-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .vessel-image {
+        flex: 1;
+        max-width: 50%;
+    }
+    
+    .vessel-text {
+        flex: 1;
+    }
 }
 
 @media (min-width: 768px) {
@@ -423,61 +375,22 @@ footer p {
     }
 }
 
-/* =========================================
-   CAPTAINS SECTION & SERVICES
-   ========================================= */
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.service-card {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.service-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.service-card p {
-    flex-grow: 1;
-}
-
-.service-card a {
-    margin-top: 1.5rem;
-}
-
-.captain-photos {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.captain-card {
-    text-align: center;
-}
-
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--secondary-color);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    margin-bottom: 1rem;
-    transition: transform var(--transition-speed) ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 2rem 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }
