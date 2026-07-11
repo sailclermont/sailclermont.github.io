@@ -141,6 +141,16 @@
 
     <footer>
         <p>&copy; 2026 Sail Clermont Lakes. All rights reserved.</p>
-    </footer>
+    </footer> 
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            // Toggles the "active" class on and off when clicked
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
