@@ -397,3 +397,57 @@ footer p {
         gap: 1.5rem;
     }
 }
+/* =========================================
+   MOBILE MENU (RSI Style Dropdown)
+   ========================================= */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    #nav-menu {
+        width: 100%;
+        display: none; /* Hidden by default */
+        background: rgba(30, 58, 138, 0.95); /* Deep blue background for the drawer */
+        margin-top: 1rem;
+        border-radius: 12px;
+        padding: 1rem 0;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    #nav-menu.active {
+        display: block; /* Shows when JS adds the 'active' class */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator lines like RSI */
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    /* Optional: Animate the hamburger into an 'X' when open */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
