@@ -50,49 +50,52 @@ header {
 }
 
 .header-content {
+.header-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows the nav to drop down below the logo */
+}
+
+.logo-text {
+    text-align: left;
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 2.2rem; /* Scaled down slightly for mobile fit */
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     opacity: 0.9;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+/* Base styles for the Hamburger Icon (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    padding: 10px;
 }
 
-nav ul li a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--light-text);
+    border-radius: 3px;
     transition: all var(--transition-speed) ease;
 }
 
-nav ul li a:hover {
-    background: var(--glass-bg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
 
 /* =========================================
    MAIN CONTENT & GRID LAYOUT
